@@ -1,0 +1,22 @@
+<h1>Tweets</h1>
+
+<table id="tweets">
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Username</th>
+      <th>Timestamp</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody class="page">
+    <%= render @tweets %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tweet', new_tweet_path %>
+<%= paginate @tweets %>
