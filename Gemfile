@@ -13,7 +13,6 @@ gem 'bootstrap-sass', '~> 3.3.4'
 gem 'bootstrap_form'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'devise'
-gem 'database_cleaner', '~> 1.4.1'
 
 group :development do
   gem 'byebug'
@@ -34,6 +33,8 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'warden-rspec-rails'
+  gem 'database_cleaner', '~> 1.4.1'
+
 end
 
 group :production do
