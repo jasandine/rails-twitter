@@ -29,6 +29,7 @@ group :test, :development do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'letter_opener'
+  gem 'poltergeist'
 end
 
 group :test do
