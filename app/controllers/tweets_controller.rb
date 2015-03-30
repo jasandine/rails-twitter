@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show, :edit]
+  respond_to :html, :js
 
   def index
     @tweets = Tweet.all
@@ -16,8 +17,11 @@ class TweetsController < ApplicationController
   def create
     @tweet = current_user.tweets.new(tweet_params)
     if @tweet.save
+      respond_to do |format|
+        format.html { redirect_to  tweets_path }
+        format.js
       flash[:notice] = "Tweet successfully added!"
-      redirect_to  tweets_path
+      end
     else
       render :new
     end
@@ -30,7 +34,7 @@ class TweetsController < ApplicationController
     redirect_to tweets_path
   end
 
-  private
+private
   def tweet_params
     params.require(:tweet).permit(:body)
   end

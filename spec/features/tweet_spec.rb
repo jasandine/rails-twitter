@@ -25,5 +25,4 @@ describe "the tweet process" do
     expect(page).to have_content 'Tweet successfully deleted!'
   end
 
-
 end

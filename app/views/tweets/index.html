@@ -1,16 +1,10 @@
-<h1>Welcome to iTweetz</h1>
-
-<h2>Tweets</h2>
-
-<ol>
-  <% @tweets.each do |tweet| %>
-  <li><%= link_to tweet.body, tweet_path(tweet) %></li>
-  <ul>
-    <li><%= tweet.created_at %></li>
-  </ul>
-  <% end %>
-</ol>
-
-<% if user_signed_in? %>
-<%= link_to 'Create a new tweet', new_tweet_path %>
-<% end %>
+<div class="col-xs-4">
+  <div class="tweet-form">
+    <%= link_to "New Tweet", new_tweet_path, id: "new_link", remote: true %>
+  </div>
+</div>
+<div class="col-xs-8">
+  <div id="feed">
+    <%= render @tweets.reverse %>
+  </div>
+</div>

@@ -17,9 +17,10 @@
   <%= link_to "Login", new_user_session_path %>
 <% end %>
 
-
-<%= flash[:notice] %>
-<%= flash[:alert] %>
+<div class="flash">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+</div>
 
 <%= yield %>
 
