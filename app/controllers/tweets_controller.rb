@@ -32,8 +32,7 @@ class TweetsController < ApplicationController
     @tweet.destroy
     respond_to do |format|
       format.html { redirect_to  tweets_path }
-      format.js
-    flash[:notice] = "Tweet successfully deleted!"
+      format.js { flash[:notice] = "Tweet successfully deleted!" }
     end
   end
 
