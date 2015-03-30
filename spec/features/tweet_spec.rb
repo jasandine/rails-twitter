@@ -9,7 +9,7 @@ describe "the tweet process" do
 
   it 'adds a new tweet' do
     visit tweets_path
-    click_on "Create a new tweet"
+    click_on "New Tweet"
     fill_in "Body", with: "STFD"
     click_on "Create Tweet"
     expect(page).to have_content 'Tweet successfully added!'
@@ -17,11 +17,10 @@ describe "the tweet process" do
 
   it 'deletes a tweet' do
     visit tweets_path
-    click_on "Create a new tweet"
+    click_on "New Tweet"
     fill_in "Body", with: "STFD"
     click_on "Create Tweet"
-    click_on "STFD"
-    click_on "Delete"
+    click_on "Destroy"
     expect(page).to have_content 'Tweet successfully deleted!'
   end
 
