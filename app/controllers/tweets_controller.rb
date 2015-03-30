@@ -30,8 +30,11 @@ class TweetsController < ApplicationController
   def destroy
     @tweet = Tweet.find(params[:id])
     @tweet.destroy
+    respond_to do |format|
+      format.html { redirect_to  tweets_path }
+      format.js
     flash[:notice] = "Tweet successfully deleted!"
-    redirect_to tweets_path
+    end
   end
 
 private
