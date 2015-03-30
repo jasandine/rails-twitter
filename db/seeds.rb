@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+require 'securerandom'
+
+75.times do
+  Tweet.create(
+  :user_id => 1,
+  :body => SecureRandom.hex(32)
+  )
+end

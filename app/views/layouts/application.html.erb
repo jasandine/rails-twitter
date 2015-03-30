@@ -7,22 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
   <% else %>
-  <%= link_to "Join us", new_user_registration_path %> |
-  <%= link_to "Login", new_user_session_path %>
+  <li><%= link_to "Join us", new_user_registration_path %></li>
+  <li><%= link_to "Login", new_user_session_path %></li>
 <% end %>
+</ul>
+</nav>
 
-<div class="flash">
+<div class="container">
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
+  <%= yield %>
 </div>
 
-<%= yield %>
 
 </body>
 </html>
