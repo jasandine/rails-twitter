@@ -4,11 +4,13 @@
 
 <ol>
   <% @tweets.each do |tweet| %>
-  <li><%= link_to tweet.title, tweet_path(tweet) %></li>
+  <li><%= link_to tweet.body, tweet_path(tweet) %></li>
   <ul>
     <li><%= tweet.created_at %></li>
   </ul>
   <% end %>
 </ol>
 
+<% if user_signed_in? %>
 <%= link_to 'Create a new tweet', new_tweet_path %>
+<% end %>

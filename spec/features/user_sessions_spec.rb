@@ -26,3 +26,14 @@ describe "the sign out a user process" do
     expect(page).to have_content "Signed out successfully."
   end
 end
+
+describe "the sign in a user process" do
+    it "signs in a user" do
+    user = FactoryGirl.create(:user)
+    visit new_user_session_path
+    fill_in "Username", with: user.username
+    fill_in "Password", with: user.password
+    click_on "Log in"
+    expect(page).to have_content "Signed in successfully."
+  end
+end
