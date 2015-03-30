@@ -1,0 +1,10 @@
+<h1><%= @tweet.body %></h1>
+
+<h3><%= @tweet.created_at %> by <%= @tweet.user.username %></h3>
+
+<% if current_user == @post.user %>
+<p><%= link_to "Delete", tweet_path(@tweet),
+:data => {:confirm => "You sure?",
+  :method => "delete"} %></p>
+  <% end %>
+  <p><%= link_to "Return to all tweets", tweetss_path %></p>

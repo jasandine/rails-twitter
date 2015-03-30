@@ -12,3 +12,17 @@ describe "the add a user process" do
     expect(page).to have_content 'Welcome! You have signed up successfully.'
   end
 end
+
+describe "the sign out a user process" do
+  let(:user) { FactoryGirl.create(:user) }
+
+  before do
+    sign_in(user)
+  end
+
+  it "signs out a user" do
+    visit root_path
+    click_on "Logout"
+    expect(page).to have_content "Signed out successfully."
+  end
+end

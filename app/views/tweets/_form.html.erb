@@ -1,0 +1,7 @@
+<%= render "layouts/errors", :object => @tweet %>
+
+<%= form_for @tweet do |f| %>
+<%= f.label :body %>
+<%= f.text_field :body %>
+<%= f.submit %>
+<% end %>

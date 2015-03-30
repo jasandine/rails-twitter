@@ -1,1 +1,14 @@
 <h1>Welcome to iTweetz</h1>
+
+<h2>Tweets</h2>
+
+<ol>
+  <% @tweets.each do |tweet| %>
+  <li><%= link_to tweet.title, tweet_path(tweet) %></li>
+  <ul>
+    <li><%= tweet.created_at %></li>
+  </ul>
+  <% end %>
+</ol>
+
+<%= link_to 'Create a new tweet', new_tweet_path %>
