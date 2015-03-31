@@ -1,5 +1,5 @@
-class Tweet < ActiveRecord::Base
+class Reply < ActiveRecord::Base
   belongs_to :user
-  has_many :replies
+  belongs_to :tweet
   validates :body, :presence => true
 end

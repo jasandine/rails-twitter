@@ -1,22 +1,21 @@
 <h1>Tweets</h1>
 <p><%= link_to "New Tweet", new_tweet_path, id: "new_tweet_link", remote: true %></p>
 <div class="container">
-<table id="tweets">
-  <thead>
-    <tr>
-      <th>Body</th>
-      <th>Username</th>
-      <th>Timestamp</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+  <table id="tweets">
+    <thead>
+      <tr>
+        <th>Body</th>
+        <th>Username</th>
+        <th>Timestamp</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
 
-  <tbody class="page">
-    <%= render @tweets %>
-  </tbody>
-</table>
+    <tbody class="page">
+      <%= render @tweets %>
+      <%= paginate @tweets %>
+    </tbody>
+  </table>
 </div>
 <br>
-
-<%= paginate @tweets %>
