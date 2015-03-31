@@ -19,10 +19,10 @@ class TweetsController < ApplicationController
     if @tweet.save
       respond_to do |format|
         format.html { redirect_to  tweets_path }
-        format.js { flash[:notice] = "Tweet successfully added!" }
+        format.js { flash.now[:notice] = "Tweet successfully added!" }
       end
     else
-      flash[:alert] = "Tweet body cannot be blank!"
+      format.js { flash.now[:alert] = "Tweet body cannot be blank!" }
     end
   end
 
@@ -31,7 +31,7 @@ class TweetsController < ApplicationController
     @tweet.destroy
     respond_to do |format|
       format.html { redirect_to  tweets_path }
-      format.js { flash[:notice] = "Tweet successfully deleted!" }
+      format.js { flash.now[:notice] = "Tweet successfully deleted!" }
     end
   end
 
