@@ -35,6 +35,17 @@ class TweetsController < ApplicationController
     end
   end
 
+  # def search
+  #   @tweets = Tweet.search do
+  #     keywords params[:tweet_id]
+  #   end.results
+  #
+  #   respond_to do |format|
+  #     format.html { render :action => "tweets" }
+  #     format.xml { render :xml => @tweets }
+  #   end
+  # end
+
 private
   def tweet_params
     params.require(:tweet).permit(:body)
