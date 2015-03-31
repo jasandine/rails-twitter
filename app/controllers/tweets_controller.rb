@@ -22,7 +22,7 @@ class TweetsController < ApplicationController
         format.js { flash[:notice] = "Tweet successfully added!" }
       end
     else
-      render :new
+      flash[:alert] = "Tweet body cannot be blank!"
     end
   end
 

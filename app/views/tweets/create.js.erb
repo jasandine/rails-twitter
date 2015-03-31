@@ -1,4 +1,8 @@
-$('#new_tweet').remove();
-$('#new_tweet_link').show();
-$('#tweets tbody').prepend('<%= j render(@tweet) %>');
-$(".notice").html("<%= flash[:notice] %>");
+<% if @tweet.save %>
+  $('#new_tweet').remove();
+  $('#new_tweet_link').show();
+  $('#tweets tbody').prepend('<%= j render(@tweet) %>');
+  $(".notice").html("<%= flash[:notice] %>");
+<% else %>
+  $(".alert").html("<%= flash[:alert] %>");
+<% end %>
