@@ -4,6 +4,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all.order("created_at DESC").page(params[:page])
+    @search = Tweet.search(params[:q])
   end
 
   def show

@@ -14,7 +14,7 @@ gem 'bootstrap_form'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'devise'
 gem 'kaminari'
-gem 'ransack'
+gem 'textacular', '~> 3.0'
 
 group :development do
   gem 'byebug'
