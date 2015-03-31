@@ -2,6 +2,33 @@
 
 
 
+
+
+
+<div class="row">
+  <div class="large-6 columns">
+    <%= render ('search') %>
+  </div>
+</div>
+
+
+
+<% if @search_results != [] && @search_results != nil %>
+<div class="row">
+  <div class="large-12 columns">
+    <h2>Search Results:</h2>
+
+    <ul>
+      <% @search_results.each do |result| %>
+      <li><a href="/tweets/<%= result.id %>"><%= result.body %></a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
+
+
+
 <p><%= link_to "New Tweet", new_tweet_path, id: "new_tweet_link", remote: true %></p>
 <div class="container">
   <table id="tweets">
@@ -21,4 +48,3 @@
     </tbody>
   </table>
 </div>
-<br>

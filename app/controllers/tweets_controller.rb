@@ -4,7 +4,13 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all.order("created_at DESC").page(params[:page])
-    @search = Tweet.search(params[:q])
+    @search = params[:query]
+     if @search == nil
+       render ('tweets/index.html.erb')
+     else
+       @search_results = Tweet.basic_search(@search)
+       render :index
+     end
   end
 
   def show
