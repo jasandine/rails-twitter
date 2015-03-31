@@ -19,8 +19,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       respond_to do |format|
         format.html { redirect_to  tweets_path }
-        format.js
-      flash[:notice] = "Tweet successfully added!"
+        format.js { flash[:notice] = "Tweet successfully added!" }
       end
     else
       render :new

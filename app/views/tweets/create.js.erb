@@ -1,4 +1,4 @@
 $('#new_tweet').remove();
-$('#new_link').show();
-$('#feed').append('<%= j render(@tweet) %>');
+$('#new_tweet_link').show();
+$('#tweets tbody').prepend('<%= j render(@tweet) %>');
 $(".notice").html("<%= flash[:notice] %>");
